@@ -10,19 +10,22 @@ describe('<AddCard />', () => {
 
     cy.contains('button', 'Adicionar Cartão').click()
 
-    cy.contains('Número do cartão é obrigatório')
-    .should('be.visible')
+    cy.contains('.alert-error', 'Número do cartão é obrigatório')
+      .should('be.visible')
 
-    cy.contains('Nome do titular é obrigatório')
-    .should('be.visible')
 
-    cy.contains('Data de expiração é obrigatória')
-    .should('be.visible')
+    cy.contains('.alert-error', 'Nome do titular é obrigatório')
+      .should('be.visible')
 
-    cy.contains('CVV é obrigatório')
-    .should('be.visible')
+    cy.contains('.alert-error', 'Data de expiração é obrigatória')
+      .should('be.visible')
 
-    cy.contains('Selecione um banco')
-    .should('be.visible')
+    cy.contains('.alert-error', 'CVV é obrigatório')
+      .should('be.visible')
+
+    cy.contains('.alert-error', 'Selecione um banco')
+      .should('be.visible')
+
+
   })
 })

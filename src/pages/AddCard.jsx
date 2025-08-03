@@ -235,7 +235,7 @@ const AddCard = () => {
                   }`}
                 />
                 {errors.number && (
-                  <p className="mt-1 text-xs text-red-400 ml-2">{errors.number}</p>
+                  <p className="alert-error mt-1 text-xs text-red-400 ml-2">{errors.number}</p>
                 )}
               </div>
 
@@ -255,7 +255,7 @@ const AddCard = () => {
                   }`}
                 />
                 {errors.holderName && (
-                  <p className="mt-1 text-xs text-red-400 ml-2">{errors.holderName}</p>
+                  <p  className="alert-error mt-1 text-xs text-red-400 ml-2">{errors.holderName}</p>
                 )}
               </div>
 
@@ -277,7 +277,7 @@ const AddCard = () => {
                     }`}
                   />
                   {errors.expirationDate && (
-                    <p className="mt-1 text-xs text-red-400 ml-2">{errors.expirationDate}</p>
+                    <p  className="alert-error mt-1 text-xs text-red-400 ml-2">{errors.expirationDate}</p>
                   )}
                 </div>
 
@@ -307,7 +307,7 @@ const AddCard = () => {
                     </button>
                   </div>
                   {errors.cvv && (
-                    <p className="mt-1 text-xs text-red-400 ml-2">{errors.cvv}</p>
+                    <p className="alert-error mt-1 text-xs text-red-400 ml-2">{errors.cvv}</p>
                   )}
                 </div>
               </div>
@@ -356,7 +356,7 @@ const AddCard = () => {
                   })}
                 </div>
                 {errors.bank && (
-                  <p className="mt-1 text-xs text-red-400 ml-2">{errors.bank}</p>
+                  <p className="alert-error mt-1 text-xs text-red-400 ml-2">{errors.bank}</p>
                 )}
               </div>
 
