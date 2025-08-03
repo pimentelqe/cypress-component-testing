@@ -1,6 +1,10 @@
 import React from 'react'
 import AddCard from './AddCard'
 
+Cypress.Commands.add('alertErrorHaveText', (expectedText) => {
+  cy.contains('.alert-error', expectedText)
+    .should('be.visible')
+})
 
 
 describe('<AddCard />', () => {
@@ -10,21 +14,18 @@ describe('<AddCard />', () => {
 
     cy.contains('button', 'Adicionar Cartão').click()
 
-    cy.contains('.alert-error', 'Número do cartão é obrigatório')
-      .should('be.visible')
+    const alerts = ['Número do cartão é obrigatório',
+      'Nome do titular é obrigatório',
+      'Data de expiração é obrigatória',
+      'CVV é obrigatório',
+      'Selecione um banco'
+    ]
 
+    alerts.forEach((alert) => {
+      cy.alertErrorHaveText(alert)
 
-    cy.contains('.alert-error', 'Nome do titular é obrigatório')
-      .should('be.visible')
+    })
 
-    cy.contains('.alert-error', 'Data de expiração é obrigatória')
-      .should('be.visible')
-
-    cy.contains('.alert-error', 'CVV é obrigatório')
-      .should('be.visible')
-
-    cy.contains('.alert-error', 'Selecione um banco')
-      .should('be.visible')
 
 
   })
