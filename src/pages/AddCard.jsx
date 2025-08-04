@@ -223,7 +223,8 @@ const AddCard = () => {
                   Número do Cartão
                 </label>
                 <input
-                  type="text"
+                  data-cy="number"
+                  type="text" 
                   value={cardData.number}
                   onChange={(e) => handleInputChange('number', e.target.value)}
                   placeholder="1234 5678 9012 3456"
@@ -244,6 +245,7 @@ const AddCard = () => {
                   Nome do Titular
                 </label>
                 <input
+                  data-cy="holderName"
                   type="text"
                   value={cardData.holderName}
                   onChange={(e) => handleInputChange('holderName', e.target.value)}
@@ -265,6 +267,7 @@ const AddCard = () => {
                     Validade
                   </label>
                   <input
+                    data-cy="expirationDate"
                     type="text"
                     value={cardData.expirationDate}
                     onChange={(e) => handleInputChange('expirationDate', e.target.value)}
@@ -287,6 +290,7 @@ const AddCard = () => {
                   </label>
                   <div className="relative">
                     <input
+                      data-cy="cvv"
                       type={showCVV ? 'text' : 'password'}
                       value={cardData.cvv}
                       onChange={(e) => handleInputChange('cvv', e.target.value)}
@@ -320,6 +324,7 @@ const AddCard = () => {
                   {banks.map(bank => {
                     return (
                       <button
+                        data-cy={`bank-${bank.value}`}
                         type="button"
                         key={bank.value}
                         onClick={() => handleInputChange('bank', bank.value)}
@@ -381,6 +386,7 @@ const AddCard = () => {
               )}
 
               <button
+                data-cy="saveMyCard"
                 type="submit"
                 disabled={loading}
                 className="w-full bg-lime-300 hover:bg-lime-400 disabled:bg-zinc-700 disabled:text-zinc-500 text-zinc-900 font-semibold py-3 px-6 rounded-xl transition-colors flex items-center justify-center"
